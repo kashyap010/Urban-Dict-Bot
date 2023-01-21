@@ -16,8 +16,7 @@ bot.hears(/[\S\s]/, (ctx) => {
     ctx.reply("Oops! Couldn't find its meaning on Urban Dictionary")
     return;
    }
-   ctx.reply(`Definition:\n${response[0].definition}`)
-   ctx.reply(`Example:\n${response[0].example}`)
+   ctx.replyWithHTML(`<b>Definition</b>\n${response[0].definition}\n\n<b>Example</b>\n${response[0].example}`)
   })
   .catch(err => {
    console.error(err)

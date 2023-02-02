@@ -1,6 +1,6 @@
 require('dotenv').config()
 const axios = require("axios");
-const { formatList } = require("./responseFormatter")
+const { formatList } = require("./helpers/responseFormatter")
 
 let options = (term) => ({
   method: 'GET',

@@ -17,7 +17,7 @@ const helper = (ctx, data) => {
        }
      })
  
-     const worker = new Worker('./helpers/worker.js', {
+     const worker = new Worker('./src/helpers/worker.js', {
        workerData: data.slice(1,)
      });        
   })

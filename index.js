@@ -1,8 +1,8 @@
 const { Telegraf } = require('telegraf')
 require('dotenv').config()
-const { meaning } = require('./urbanDictionaryApi')
-const { hearsHandler } = require('./handlers/hearsHandler')
-const { moreMeanings } = require('./handlers/moreMeaningsHandler')
+const { meaning } = require('./src/urbanDictionaryApi')
+const { hearsHandler } = require('./src/handlers/hearsHandler')
+const { moreMeanings } = require('./src/handlers/moreMeaningsHandler')
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
@@ -23,7 +23,3 @@ bot.action("Yes", moreMeanings)
 bot.hears(/[\S\s]/, hearsHandler)
 
 bot.launch()
-
-// TODO:
-// 1. divide into handlers
-// 2. more meanings

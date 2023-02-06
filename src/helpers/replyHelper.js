@@ -2,7 +2,7 @@ const { Worker } = require('worker_threads')
 
 const helper = (ctx, data) => {
  ctx
-  .replyWithHTML(`<b>Definition</b>\n${data[0].definition}\n\n<b>Example</b>\n${data[0].example}`)
+  .replyWithHTML(`<b>Definition</b>👇👇\n${data[0].definition}\n\n👇👇<b>Example</b>\n${data[0].example}`)
   .then(() => {
      if (data.length == 1) return;
      

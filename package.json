@@ -1,7 +1,7 @@
 {
   "name": "slang-meaning-bot",
   "version": "1.0.0",
-  "description": "Tired of not understanding Gen Z? Use this bot to know the meaning",
+  "description": "I was tired of not understanding Gen Z. Hence this bot to know their stupid slangs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

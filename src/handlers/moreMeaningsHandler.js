@@ -2,7 +2,7 @@ const fs = require('fs')
 const { Worker } = require('worker_threads')
 const replyHelper = require('../helpers/replyHelper')
 
-const moreMeanings = (ctx) => {
+const moreMeaningsHandler = (ctx) => {
   ctx.reply("Wait...")
 
   fs.readFile('response.json', (err, data) => {
@@ -17,4 +17,4 @@ const moreMeanings = (ctx) => {
   })
 }
 
-module.exports = { moreMeanings }
+module.exports = { moreMeaningsHandler }

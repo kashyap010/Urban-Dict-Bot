@@ -4,7 +4,8 @@ const { hearsHandler } = require('./src/handlers/hearsHandler')
 const { moreMeaningsHandler } = require('./src/handlers/moreMeaningsHandler')
 
 const fs = require('fs');
-const secrets = JSON.parse(fs.readFileSync('/run/secrets/test-secret', 'utf-8'))
+const secretsPath = '/run/secrets/test-secret'
+const secrets = fs.existsSync(secretsPath) ?  JSON.parse(fs.readFileSync(secretsPath, 'utf-8')) : null;
 
 const bot = new Telegraf(process.env.BOT_TOKEN || secrets.BOT_TOKEN);
 

@@ -3,6 +3,7 @@ const axios = require("axios");
 const { formatList } = require("./helpers/responseFormatter")
 
 const fs = require('fs');
+const secretsPath = '/run/secrets/test-secret'
 const secrets = fs.existsSync(secretsPath) ?  JSON.parse(fs.readFileSync(secretsPath, 'utf-8')) : null;
 
 let options = (term) => ({

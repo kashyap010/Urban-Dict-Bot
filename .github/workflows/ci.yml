@@ -1,0 +1,27 @@
+name: Build and push docker image
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3.3.0
+      
+      - name: Docker login
+        uses: docker/login-action@v2.1.0
+        with:
+          username: kashyap010
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: Build image 
+        run: docker build -t urban-dict-bot:latest .
+        
+      - name: Push image
+        if: ${{ success() }}
+        run: |
+          docker tag urban-dict-bot:latest kashyap010/urban-dict-bot:latest
+          docker push kashyap010/urban-dict-bot:latest
+          

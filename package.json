@@ -1,20 +1,21 @@
 {
-  "name": "slang-meaning-bot",
-  "version": "1.0.0",
-  "description": "I was tired of not understanding Gen Z. Hence this bot to know their stupid slangs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
-  },
-  "author": "Kashy",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^1.2.3",
-    "dotenv": "^16.0.3",
-    "telegraf": "^4.11.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
-  }
+	"name": "slang-meaning-bot",
+	"version": "1.0.0",
+	"description": "I was tired of not understanding Gen Z. Hence this bot to know their stupid slangs",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js",
+		"dev": "nodemon index.js"
+	},
+	"author": "Kashy",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^1.2.3",
+		"dotenv": "^16.0.3",
+		"telegraf": "^4.11.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.20"
+	}
 }

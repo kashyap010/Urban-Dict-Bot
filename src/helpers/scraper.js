@@ -45,7 +45,7 @@ async function scrape(term) {
 				defns.push(defn);
 			});
 		}
-		return defns;
+		return defns.length ? defns : false;
 	} catch (e) {
 		return e;
 	}

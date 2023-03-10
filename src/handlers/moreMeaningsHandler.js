@@ -1,20 +1,20 @@
-const fs = require('fs')
-const { Worker } = require('worker_threads')
-const replyHelper = require('../helpers/replyHelper')
+const fs = require("fs");
+const { Worker } = require("worker_threads");
+const reply = require("../helpers/reply");
 
 const moreMeaningsHandler = (ctx) => {
-  ctx.reply("Wait...")
+	ctx.reply("Wait...");
 
-  fs.readFile('response.json', (err, data) => {
-   if (err) {
-    console.error(err);
-    return
-   }
+	fs.readFile("response.json", (err, data) => {
+		if (err) {
+			console.error(err);
+			return;
+		}
 
-   const jsonData = JSON.parse(data)
-   
-   replyHelper(ctx, jsonData)
-  })
-}
+		const jsonData = JSON.parse(data);
 
-module.exports = { moreMeaningsHandler }
+		reply(ctx, jsonData);
+	});
+};
+
+module.exports = { moreMeaningsHandler };

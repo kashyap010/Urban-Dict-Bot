@@ -1,21 +1,21 @@
-const { meaning } = require('../urbanDictionaryApi')
-const { Worker } = require('worker_threads')
-const replyHelper = require('../helpers/replyHelper')
+const meaning = require("../helpers/scraper");
+const { Worker } = require("worker_threads");
+const reply = require("../helpers/reply");
 
 const hearsHandler = (ctx) => {
- const term = ctx.update.message.text;
- meaning(term)
-  .then(response => {
-    if (!response) {
-      ctx.reply("Oops! Couldn't find its meaning on Urban Dictionary")
-      return;
-    }
-    
-    replyHelper(ctx, response)
-  })
-  .catch(err => {
-   console.error(err)
-  })
-}
+	const term = ctx.update.message.text;
+	meaning(term)
+		.then((response) => {
+			if (!response) {
+				ctx.reply("Oops! Couldn't find its meaning on Urban Dictionary");
+				return;
+			}
 
-module.exports = { hearsHandler }
+			reply(ctx, response);
+		})
+		.catch((err) => {
+			console.error(err);
+		});
+};
+
+module.exports = { hearsHandler };
